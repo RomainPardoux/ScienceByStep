@@ -1,12 +1,214 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+	    <title>{% block title %}Welcome!{% endblock %}</title>
+	    {% block stylesheets %}
+	    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	        crossorigin="anonymous">
+	    	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	    	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+	    {% endblock %}
+	</head>
+
+	<body>
+	    <div class="page-wrapper chiller-theme toggled">
+	    	{% block sidebar %}
+	        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+	            <i class="fas fa-bars"></i>
+	        </a>
+	        <nav id="sidebar" class="sidebar-wrapper">
+	            <div class="sidebar-content">
+	                <div class="sidebar-brand">
+	                    <a href="#">ScienceByStep</a>
+	                    <div id="close-sidebar">
+	                        <i class="fas fa-times"></i>
+	                    </div>
+	                </div>
+	                <div class="sidebar-header">
+	                    <div class="user-pic">
+	                    	<!--
+	                        <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/bootstrap4/assets/img/user.jpg" alt="User picture">
+	                    	-->
+	                    </div>
+	                    <div class="user-info">
+	                        <span class="user-name">Romain
+	                            <strong>Pardoux</strong>
+	                        </span>
+	                        <span class="user-role">Administrator</span>
+	                        <span class="user-status">
+	                            <i class="fa fa-circle"></i>
+	                            <span>Online</span>
+	                        </span>
+	                    </div>
+	                </div>
+	                <!-- sidebar-header  -->
+	                <div class="sidebar-search">
+	                    <div>
+	                        <div class="input-group">
+	                            <input type="text" class="form-control search-menu" placeholder="Search...">
+	                            <div class="input-group-append">
+	                                <span class="input-group-text">
+	                                    <i class="fa fa-search" aria-hidden="true"></i>
+	                                </span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- sidebar-search  -->
+	                <div class="sidebar-post">
+	                    <div>
+	                    	<div class="post-group">
+								<button type="button" class="btn btn-primary btn-lg btn-sm btn-block">Add New Post</button>
+							</div>
+	                    </div>
+	                </div>
+	                <!-- sidebar-post  -->
+	                <div class="sidebar-menu">
+	                    <ul>
+	                        <li class="header-menu">
+	                            <span>General</span>
+	                        </li>
+	                        <li class="sidebar-dropdown">
+	                            <a href="#">
+	                                <i class="fa fa-filter"></i>
+	                                <span>Add New Filter</span>
+	                            </a>
+	                            <div class="sidebar-submenu">
+	                                <ul>
+	                                    <li>
+	                                        <a href="#">Dashboard 1</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">Dashboard 2</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">Dashboard 3</a>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-dropdown">
+	                            <a href="#">
+	                                <i class="fa fa-bell"></i>
+	                                <span>Notifications</span>
+	                                <span class="badge badge-pill badge-primary">34</span>
+	                            </a>
+	                            <div class="sidebar-submenu">
+	                                <ul>
+	                                    <li>
+	                                        <a href="#">New Evaluation
+	                                            <span class="badge badge-pill badge-success">1</span>
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">New Decision
+	                                            <span class="badge badge-pill badge-success">2</span>
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">New Comment
+	                                            <span class="badge badge-pill badge-success">1</span>
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">Reviewing
+	                                            <span class="badge badge-pill badge-success">10</span>
+	                                        </a>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                        </li>
+	                        <li class="header-menu">
+	                            <span>Extra</span>
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                                <i class="fa fa-language"></i>
+	                                <span>Translate</span>
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                                <i class="fa fa-share"></i>
+	                                <span>Export to</span>
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                                <i class="fa fa-university"></i>
+	                                <span>Prepare To Publish</span>
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#">
+	                                <i class="fa fa-book"></i>
+	                                <span>Documentation</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </div>
+	                <!-- sidebar-menu  -->
+	            </div>
+	            <!-- sidebar-content  -->
+	        </nav>
+	        {% endblock %}
+	        <!-- sidebar-wrapper  -->
+	        <main class="page-content">
+	        {% block body %}
+	            <div class="container-fluid">
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <h2>Sidebar template</h2>
+	                        <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
+
+	                    </div>
+	                </div>
+	                <hr>  
+	               <div class="row">
+	                    <div class="form-group col-md-12">                    
+	                      <div> You can find the latest update on <a href="https://github.com/azouaoui-med/pro-sidebar-template"  target="_blank"> Github</a></div>
+	                    </div>
+	                </div>
+	              <hr> 
+	                <div class="row">
+	                    
+	                   <div class="form-group col-md-12">
+	                        <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=large" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+	                     <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+	                     <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+	                  </div>
+	                  <div class="form-group col-md-12">
+	                        <a href="https://github.com/azouaoui-med/pro-sidebar-template" class="btn btn-primary" target="_blank">
+	                            <i class="fab fa-github"></i> View on GitHub</a>
+	                        
+	                     
+	                    </div>
+	                </div>
+	            </div>
+	        <!-- page-content" -->
+	        {% endblock %}
+	        </main>
+	        {% block javascripts %}
+	        	<script src="{{ asset('js/main.js') }}"></script>
+	        {% endblock %}
+	    </div>
+	    <!-- page-wrapper -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	        crossorigin="anonymous"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	        crossorigin="anonymous"></script>
+	    
+	</body>
+
 </html>
