@@ -1,10 +1,21 @@
-/* NavBar */
+/* NavBar Sidebar ******************************/
 @media (max-width: 991.98px)
 .bd-navbar .navbar-nav-scroll .navbar-nav {
     padding-bottom: 2rem;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px)
+.bd-links {
+    display: block!important;
+}
+
+@media (min-width: 768px)
+.bd-links {
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
 }
 
 @media (max-width: 991.98px)
@@ -14,19 +25,40 @@
     color: #rgb(255,255,255);
 }
 
-.bd-navbar {
+.bd-toggle {
+    line-height: 1;
+    color: rgba(255,255,255,0.5);
+}
+
+.bd-sidebar{
+    width: 230px;
+}
+
+.bd-search-docs-toggle:hover {
+    color: rgba(255,255,255);
+}
+
+.nb-navbar {
     min-height: 4rem;
     color: rgb(255,255,255);
-	background-color: rgb(234,171,29);
+    background-color: rgb(234,171,29);
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
-.bd-navbar .navbar-nav .nav-link.active {
+.nb-navbar .navbar-nav .nav-link.active {
     font-weight: 500;
 }
 
-#bd-slogan{
-	margin-bottom: 0rem;
-    font-weight: 500;
-    padding: 8px;
+.nb-slogan{
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 0rem;
+}
+
+.nav-item{
+    padding-right: 0.5rem;
+}
+
+.bd-links {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
