@@ -10,10 +10,6 @@
 @media (min-width: 768px)
 .bd-links {
     display: block!important;
-}
-
-@media (min-width: 768px)
-.bd-links {
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
 }
@@ -25,17 +21,19 @@
     color: #rgb(255,255,255);
 }
 
-.bd-toggle {
+.bd-toggle, .bd-toggle:visited, .bd-toggle:active, .bd-toggle:focus {
     line-height: 1;
     color: rgba(255,255,255,0.5);
+    outline: none!important;
+}
+
+.bd-toggle:hover{
+    color: rgba(255,255,255);
+    cursor: pointer;
 }
 
 .bd-sidebar{
     width: 230px;
-}
-
-.bd-search-docs-toggle:hover {
-    color: rgba(255,255,255);
 }
 
 .nb-navbar {
