@@ -51,16 +51,15 @@
     cursor: pointer;
 }
 
-/* SideBar ******************************/
+/* NavBar ******************************/
 .sbs-sidebar{
     width: 230px;
+}
+
+/* Autres ******************************/
+.sbs-links {
     padding-top: 1rem;
     padding-bottom: 1rem;
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
-}
-
-/* Footer ******************************/
-footer{
-    background-color: rgb(45,45,45);
 }
